@@ -1,0 +1,13 @@
+CREATE OR REPLACE FUNCTION delete_item(
+	paramid numeric)
+    RETURNS void
+
+AS $$
+
+    BEGIN
+      DELETE FROM table_test 
+	  WHERE id = paramid;
+    END;
+    
+$$
+LANGUAGE 'plpgsql'

@@ -1,0 +1,15 @@
+CREATE OR REPLACE FUNCTION get_all(
+	ref refcursor
+)
+    RETURNS refcursor
+
+AS $$
+
+    BEGIN
+      OPEN ref FOR 
+	  SELECT * FROM table_test;
+      RETURN ref;
+    END;
+    
+$$
+LANGUAGE 'plpgsql'

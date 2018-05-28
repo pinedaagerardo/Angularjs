@@ -1,0 +1,12 @@
+CREATE TABLE table_test
+(
+    id numeric(3,0) NOT NULL,
+    name character(10),
+    CONSTRAINT table_test_pkey PRIMARY KEY (id)
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.table_test
+    OWNER to user_test;
+
+GRANT ALL ON TABLE public.table_test TO user_test;

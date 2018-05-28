@@ -1,0 +1,14 @@
+CREATE OR REPLACE FUNCTION add_item(
+	id numeric,
+	name character)
+    RETURNS void
+
+AS $$
+
+    BEGIN
+      INSERT INTO table_test 
+	  VALUES (id, name);
+    END;
+    
+$$
+LANGUAGE 'plpgsql'
