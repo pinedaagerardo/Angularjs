@@ -1,0 +1,16 @@
+CREATE OR REPLACE FUNCTION edit_item(
+	pid numeric,
+	pnewname character)
+    RETURNS void
+    LANGUAGE 'plpgsql'
+ 
+AS $BODY$
+
+    BEGIN
+      UPDATE table_test 
+	  SET name = pnewname
+	  WHERE id = pid;
+    END;
+    
+
+$BODY$;
